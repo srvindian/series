@@ -1,0 +1,32 @@
+#include<stdio.h>
+int fibo(int val)
+{
+  if (val==0||val==1) return(1);
+  return(fibo(val-1)+fibo(val-2));
+}
+int nextprime(int val)
+{
+  while(1)
+  {
+    val++;
+    if(val==2||val%2==1) return(val);
+  }
+}
+int main(int argc,char *argv[])
+{
+  int i,j=0,k=1,n;
+  printf("Enter the term: ");
+  scanf("%d",&n);
+  for(i=1;i<=n;i++)
+  {
+    if(i%2==1){
+      printf("%d,",fibo(j));
+      j++;
+    }
+    else{
+      k=nextprime(k);
+      printf("%d,",k);
+    }
+  }
+  return 1;
+}
